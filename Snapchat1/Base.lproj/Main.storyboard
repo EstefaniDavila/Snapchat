@@ -60,39 +60,62 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                <buttonConfiguration key="configuration" style="plain" image="usuario-2" title="    Iniciar Sesión">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="iniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FQc-fw-EyT"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="celebrando" translatesAutoresizingMaskIntoConstraints="NO" id="NL1-Gb-xDf">
-                                <rect key="frame" x="87" y="632" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-pc-NTy">
+                                <rect key="frame" x="107" y="606" width="200" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="Qtk-PY-ilP"/>
+                                    <constraint firstAttribute="width" constant="200" id="eoG-wP-E24"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="198.5" id="wm7-zH-dnO"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="facebook-2" title=" Sign In Facebook">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="FacebookLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ibw-Tb-Srz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celebrando" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-mn-akB">
+                                <rect key="frame" x="87" y="705" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="xci-Jy-cKr"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rsI-90-ttA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Gf-VE-hWK"/>
+                            <constraint firstItem="Wnq-pc-NTy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4I4-Bb-f1o"/>
                             <constraint firstItem="7Pn-md-YQN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="59Z-Iq-T4A"/>
                             <constraint firstItem="mHb-ig-9CC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Cq-ht-aBY"/>
-                            <constraint firstItem="NL1-Gb-xDf" firstAttribute="centerX" secondItem="T5j-IP-YGh" secondAttribute="centerX" id="L7d-rx-iG2"/>
+                            <constraint firstItem="T5j-IP-YGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AP2-H3-kw1"/>
+                            <constraint firstItem="Wnq-pc-NTy" firstAttribute="top" secondItem="T5j-IP-YGh" secondAttribute="bottom" constant="40" id="C28-an-3UF"/>
+                            <constraint firstItem="tRV-mn-akB" firstAttribute="centerX" secondItem="Wnq-pc-NTy" secondAttribute="centerX" id="IVY-fE-iE8"/>
                             <constraint firstItem="ICd-mF-idu" firstAttribute="top" secondItem="rsI-90-ttA" secondAttribute="bottom" constant="25" id="L8u-Ow-29R"/>
                             <constraint firstItem="iPz-HE-XdV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LrZ-zs-n77"/>
                             <constraint firstItem="7Pn-md-YQN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TO5-H5-5x3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NL1-Gb-xDf" secondAttribute="bottom" constant="102" id="Tpi-kN-B6j"/>
                             <constraint firstItem="T5j-IP-YGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UD7-Qh-0XB"/>
                             <constraint firstItem="rsI-90-ttA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ViR-mm-IAO"/>
                             <constraint firstItem="7Pn-md-YQN" firstAttribute="top" secondItem="iPz-HE-XdV" secondAttribute="bottom" constant="27" id="XDN-2r-Xyf"/>
+                            <constraint firstItem="tRV-mn-akB" firstAttribute="top" secondItem="Wnq-pc-NTy" secondAttribute="bottom" constant="53" id="XZm-Th-jHz"/>
                             <constraint firstItem="rsI-90-ttA" firstAttribute="top" secondItem="mHb-ig-9CC" secondAttribute="bottom" constant="39" id="ZLW-6z-1LL"/>
                             <constraint firstItem="iPz-HE-XdV" firstAttribute="top" secondItem="ICd-mF-idu" secondAttribute="bottom" constant="28.5" id="a8f-Lu-BSB"/>
                             <constraint firstItem="T5j-IP-YGh" firstAttribute="centerX" secondItem="7Pn-md-YQN" secondAttribute="centerX" id="b6a-VE-8VS"/>
-                            <constraint firstItem="NL1-Gb-xDf" firstAttribute="top" secondItem="T5j-IP-YGh" secondAttribute="bottom" constant="66" id="cqF-74-Rzt"/>
                             <constraint firstItem="mHb-ig-9CC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="iXk-dd-EFj"/>
+                            <constraint firstItem="Wnq-pc-NTy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jQB-ky-9mK"/>
                             <constraint firstItem="T5j-IP-YGh" firstAttribute="top" secondItem="7Pn-md-YQN" secondAttribute="bottom" constant="49" id="lbd-hN-ZyF"/>
+                            <constraint firstItem="tRV-mn-akB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="n9X-82-Hnf"/>
                             <constraint firstItem="ICd-mF-idu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rQm-32-utu"/>
-                            <constraint firstItem="NL1-Gb-xDf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="vyn-0K-vVL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -107,7 +130,9 @@
     </scenes>
     <resources>
         <image name="celebrando" width="256" height="256"/>
+        <image name="facebook-2" width="32" height="32"/>
         <image name="login" width="256" height="256"/>
+        <image name="usuario-2" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,4 +7,6 @@ target 'Snapchat1' do
 
   # Pods for Snapchat1
   pod 'FirebaseAuth'
+  pod 'FacebookLogin'
+  
 end

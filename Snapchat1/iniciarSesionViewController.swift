@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import FacebookLogin
 
 class iniciarSesionViewController: UIViewController {
 
@@ -31,6 +32,33 @@ class iniciarSesionViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func FacebookLogin(_ sender: Any) {
+        let loginManager = LoginManager()
+                loginManager.logIn(permissions: ["publicprofile","email"], viewController: self) { (result) in
+
+                    switch result {
+                    case .success(granted: let granted, declined: let declined, token: let token):
+                        let datos = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+
+                        Auth.auth().signIn(with: datos) { (result, error) in
+                            print("Logging with Facebook...")
+                            if error != nil{
+                                print("Al iniciar sesión se presento el siguiente error (error)")
+                            }else{
+                                print("successful Facebook login!!!")
+                            }
+                        }
+                    case .cancelled:
+                        break
+                    case .failed(_):
+                        break
+                    }
+
+                }
+
+            }
     
 }
 
