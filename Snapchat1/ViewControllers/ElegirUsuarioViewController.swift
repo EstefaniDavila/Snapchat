@@ -19,8 +19,15 @@ class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         listaUsuarios.delegate=self
         listaUsuarios.dataSource=self
-        Database.database().reference().child("usuarios").observe(DataEventType.childAdded, with: {(snapchot) in
-            print(snapchot)
+        Database.database().reference().child("usuarios").observe(DataEventType.childAdded, with: {(snapshot) in
+            print(snapshot)
+        
+        let usuario = Usuario()
+        usuario.email = (snapshot.value as! NSDictionary)["email"] as! String
+        usuario.uid = snapshot.key
+        self.usuarios.append(usuario)
+        self.listaUsuarios.reloadData()
+            
         })
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00A8421A96993654F0922F9F /* Pods_Snapchat1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D78437C1C88422E2BC98235 /* Pods_Snapchat1.framework */; };
 		4820EA882849AC5C00DD029D /* Usuarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820EA872849AC5C00DD029D /* Usuarios.swift */; };
+		4820EA8A284FABC800DD029D /* CrearUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4820EA89284FABC800DD029D /* CrearUsuarioViewController.swift */; };
 		484A88AA2849746B00942FCC /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A88A92849746B00942FCC /* SnapsViewController.swift */; };
 		484A88AC28497A0000942FCC /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A88AB28497A0000942FCC /* ImagenViewController.swift */; };
 		484A88AE28498E7E00942FCC /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A88AD28498E7E00942FCC /* ElegirUsuarioViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		4820EA872849AC5C00DD029D /* Usuarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuarios.swift; sourceTree = "<group>"; };
+		4820EA89284FABC800DD029D /* CrearUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearUsuarioViewController.swift; sourceTree = "<group>"; };
 		484A88A8284972AB00942FCC /* Snapchat1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snapchat1.entitlements; sourceTree = "<group>"; };
 		484A88A92849746B00942FCC /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		484A88AB28497A0000942FCC /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				48F58B8D2840445600001154 /* iniciarSesionViewController.swift */,
 				484A88AD28498E7E00942FCC /* ElegirUsuarioViewController.swift */,
+				4820EA89284FABC800DD029D /* CrearUsuarioViewController.swift */,
 				484A88AB28497A0000942FCC /* ImagenViewController.swift */,
 				484A88A92849746B00942FCC /* SnapsViewController.swift */,
 			);
@@ -246,6 +249,7 @@
 				48F58B8E2840445600001154 /* iniciarSesionViewController.swift in Sources */,
 				48F58B8A2840445600001154 /* AppDelegate.swift in Sources */,
 				48F58B8C2840445600001154 /* SceneDelegate.swift in Sources */,
+				4820EA8A284FABC800DD029D /* CrearUsuarioViewController.swift in Sources */,
 				484A88AE28498E7E00942FCC /* ElegirUsuarioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

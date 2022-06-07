@@ -25,50 +25,60 @@ class iniciarSesionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func iniciarSesionTapped(_ sender: Any) {
+    @IBAction func iniciarSesionTapped(_ sender: Any ) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: password.text!){
              (user, error) in print("intentando iniciar sesión")
             if error != nil {
                 print("Se presento el siguiente error: \(error)")
-                Auth.auth().createUser(withEmail: self.emailTextField.text! , password: self.password.text!, completion: {(user, error) in print("Intentando crear un usuario")
-                    if error != nil {
-                        print("Se presento el siguiente error al crear el usuario: \(error) ")
-                    }else{
-                        print("El usuario fue creado exitosamente")
-                        
-                        Database.database().reference().child("usuarios").child(user!.user.uid).child("email").setValue(user!.user.email)
-                        
-                        let alerta = UIAlertController(title: "Creación de Usuario ", message: "Usuario: \(self.emailTextField.text!) se creo correctamente" , preferredStyle: .alert)
-                        let btnOk = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in self.performSegue(withIdentifier: "Iniciarsesionsegue", sender: nil)
-                        })
-                        alerta.addAction(btnOk)
-                        self.present(alerta, animated: true, completion: nil)
-                        
-                    }
-                })
+                
+                let alert = UIAlertController(title: "Se encontro un error", message: "Usuario \(self.emailTextField.text!) incorrecto, cree uno o intentelo de nuevo", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Crear", style: .default, handler: { (action) in
+                    self.performSegue(withIdentifier: "crearUsuarioSegue", sender: nil)
+                }))
+                
+                alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action) in
+                    
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
+                
             }else{
                 print("Inicio de sesion exitoso")
-                self.performSegue(withIdentifier: "Iniciarsesionsegue", sender: nil)
-            }
+                
+                let alerta = UIAlertController(title: "Inició sesión de forma exitosa", message: "Usuario: \(self.emailTextField.text!) accedió correctamente" , preferredStyle: .alert)
+                let btnOk = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in self.performSegue(withIdentifier: "Iniciarsesionsegue", sender: nil)
+                })
+                alerta.addAction(btnOk)
+                self.present(alerta, animated: true, completion: nil)
+                
+         
+                    
+                }
+            
+            
+            
         }
     }
     
     
+
     @IBAction func FacebookLogin(_ sender: Any) {
         let loginManager = LoginManager()
                 loginManager.logIn(permissions: ["publicprofile","email"], viewController: self) { (result) in
 
                     switch result {
                     case .success(granted: let granted, declined: let declined, token: let token):
-                        let datos = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+                        let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
 
-                        Auth.auth().signIn(with: datos) { (result, error) in
-                            print("Logging with Facebook...")
+                        Auth.auth().signIn(with: credential) { (result, error) in
+                            print("Iniciando sesion con Facebook...")
                             if error != nil{
-                                print("Al iniciar sesión se presento el siguiente error (error)")
+                                print("Se presento el siguiente error (error)")
                             }else{
-                                print("successful Facebook login!!!")
+                                print("Se inicio sesion con Facebook!!")
                             }
+
                         }
                     case .cancelled:
                         break
@@ -80,8 +90,6 @@ class iniciarSesionViewController: UIViewController {
 
             }
     
-   
-    
-    
+ 
 }
 
