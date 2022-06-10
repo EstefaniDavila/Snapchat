@@ -141,12 +141,24 @@
         <!--Snaps View Controller-->
         <scene sceneID="QeJ-Yr-09U">
             <objects>
-                <viewController id="IOe-TQ-hMR" customClass="SnapsViewController" customModule="Snapchat1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="IOe-TQ-hMR" customClass="SnapsViewController" customModule="Snapchat1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRH-0A-Vcd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g0Y-Pz-oIf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="p5J-ja-7N6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g0Y-Pz-oIf" firstAttribute="leading" secondItem="p5J-ja-7N6" secondAttribute="leading" id="Rr6-hd-Ho4"/>
+                            <constraint firstItem="p5J-ja-7N6" firstAttribute="trailing" secondItem="g0Y-Pz-oIf" secondAttribute="trailing" id="UyG-LS-yDC"/>
+                            <constraint firstItem="g0Y-Pz-oIf" firstAttribute="top" secondItem="p5J-ja-7N6" secondAttribute="top" id="b0g-3V-gOc"/>
+                            <constraint firstItem="p5J-ja-7N6" firstAttribute="bottom" secondItem="g0Y-Pz-oIf" secondAttribute="bottom" id="ptN-VF-l4h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jJW-lR-KR3">
                         <barButtonItem key="leftBarButtonItem" title="Cerrar Sesion" id="mEf-5a-bOe">
@@ -160,10 +172,63 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tablaSnaps" destination="g0Y-Pz-oIf" id="Acn-vA-nhN"/>
+                        <segue destination="BfZ-cC-lUA" kind="show" identifier="versnapsegue" id="7We-Cn-aPY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxd-Sa-E1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1468" y="31"/>
+        </scene>
+        <!--Ver Snap View Controller-->
+        <scene sceneID="Xnc-Qr-Pfu">
+            <objects>
+                <viewController id="BfZ-cC-lUA" customClass="VerSnapViewController" customModule="Snapchat1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lhH-sz-bmX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk0-X4-yEa">
+                                <rect key="frame" x="34" y="106" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagen Enviada:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad3-0k-NkH">
+                                <rect key="frame" x="34" y="160" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eN9-RT-4eJ">
+                                <rect key="frame" x="57" y="278" width="300" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bbc-ui-pW5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bbc-ui-pW5" firstAttribute="trailing" secondItem="kk0-X4-yEa" secondAttribute="trailing" constant="100" id="B4Y-kN-0Ii"/>
+                            <constraint firstItem="Bbc-ui-pW5" firstAttribute="trailing" secondItem="eN9-RT-4eJ" secondAttribute="trailing" constant="57" id="BrN-NQ-EBf"/>
+                            <constraint firstItem="Bbc-ui-pW5" firstAttribute="bottom" secondItem="eN9-RT-4eJ" secondAttribute="bottom" constant="384" id="DiZ-Kx-Hfr"/>
+                            <constraint firstItem="Bbc-ui-pW5" firstAttribute="trailing" secondItem="ad3-0k-NkH" secondAttribute="trailing" constant="100" id="Ez2-iv-lgv"/>
+                            <constraint firstItem="eN9-RT-4eJ" firstAttribute="leading" secondItem="Bbc-ui-pW5" secondAttribute="leading" constant="57" id="JCE-mL-Ypm"/>
+                            <constraint firstItem="kk0-X4-yEa" firstAttribute="top" secondItem="Bbc-ui-pW5" secondAttribute="top" constant="18" id="Qy2-nz-D12"/>
+                            <constraint firstItem="eN9-RT-4eJ" firstAttribute="top" secondItem="ad3-0k-NkH" secondAttribute="bottom" constant="97" id="Uou-rr-g3Z"/>
+                            <constraint firstItem="kk0-X4-yEa" firstAttribute="leading" secondItem="Bbc-ui-pW5" secondAttribute="leading" constant="34" id="XTF-9h-kuR"/>
+                            <constraint firstItem="ad3-0k-NkH" firstAttribute="top" secondItem="kk0-X4-yEa" secondAttribute="bottom" constant="33" id="cdP-Z5-qE3"/>
+                            <constraint firstItem="ad3-0k-NkH" firstAttribute="leading" secondItem="Bbc-ui-pW5" secondAttribute="leading" constant="34" id="wvS-sk-gdb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ffi-qK-nxc"/>
+                    <connections>
+                        <outlet property="imageView" destination="eN9-RT-4eJ" id="RoD-AR-tQC"/>
+                        <outlet property="lblMensaje" destination="kk0-X4-yEa" id="oRC-x6-fTL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRg-Q1-7oS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466.6666666666667" y="706.47321428571422"/>
         </scene>
         <!--Enviar Mensaje-->
         <scene sceneID="JLq-Oo-lVb">
@@ -226,7 +291,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="UImageView" destination="35v-3P-T0n" id="ozx-Of-cem"/>
-                        <outlet property="descripcionTextField" destination="kEa-op-B8T" id="Ym3-Vf-gVc"/>
+                        <outlet property="descripcionTextField" destination="zVU-uD-ehv" id="zsG-of-42M"/>
                         <outlet property="elegirContactoBoton" destination="lux-dj-Vn0" id="vC1-bc-DPe"/>
                         <segue destination="xQ9-My-Tbk" kind="show" identifier="seleccionarContactoSegue" id="1cB-Aj-BNe"/>
                     </connections>

@@ -10,4 +10,5 @@ target 'Snapchat1' do
   pod 'FacebookLogin'
   pod 'FirebaseStorage'
   pod 'FirebaseDatabase'
+  pod 'SDWebImage'
 end

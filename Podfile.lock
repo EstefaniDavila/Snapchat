@@ -75,12 +75,16 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.0)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
 
 DEPENDENCIES:
   - FacebookLogin
   - FirebaseAuth
   - FirebaseDatabase
   - FirebaseStorage
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -104,6 +108,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SDWebImage
 
 SPEC CHECKSUMS:
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
@@ -126,7 +131,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
 
-PODFILE CHECKSUM: 28d26fcdbe50f919f266aa924662df46eacfaed1
+PODFILE CHECKSUM: e8ddac988efb995ee93f75db42832a81100d0da5
 
 COCOAPODS: 1.11.3
